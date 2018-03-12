@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Auction, type: :model do
   it "is valid with valid attributes" do
-  	expect(Auction.new).to be_valid
+  	expect(Auction.new(title: 'Anything')).to be_valid
   end
 
   it "is not valid without a title" do
