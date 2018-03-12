@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Auction, type: :model do
+  # let(:seller) { User.new(:email => "jane@doe.com", :password => "pw1234", :password_confirmation => "pw1234") }
 	subject { 
 		described_class.new(title: "Anything", description: "Lorem ipsum", start_date: DateTime.now, end_date: DateTime.now + 1.week)
 	}
@@ -30,8 +31,8 @@ RSpec.describe Auction, type: :model do
   end
 
   describe "Associations" do
-    it { should have_one(:buyer).with_foreign_key('auction_id') }
-    it { should have_one(:seller).with_foreign_key('auction_id') }
+    it { should have_one(:buyer).with_foreign_key("auction_id") }
+    it { should have_one(:seller).with_foreign_key("auction_id") }
     it { should have_many(:bids) }
   end
 end
