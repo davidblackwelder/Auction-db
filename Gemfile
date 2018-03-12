@@ -36,6 +36,14 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adaptation of RSpec specifically built for rails
+  gem 'rspec-rails'
+  # Used for testing your views
+  gem 'capybara'
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_bot_rails'
+  # Contains helpful methods for testing controllers
+  gem 'rails-controller-testing'
 end
 
 group :development do
