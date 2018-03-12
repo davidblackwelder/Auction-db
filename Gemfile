@@ -44,6 +44,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Contains helpful methods for testing controllers
   gem 'rails-controller-testing'
+  gem 'shoulda', '~> 3.5'
 end
 
 group :development do
