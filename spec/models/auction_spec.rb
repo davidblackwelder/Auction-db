@@ -5,6 +5,19 @@ RSpec.describe Auction, type: :model do
 		described_class.new(title: "Anything", description: "Lorem ipsum", start_date: DateTime.now, end_date: DateTime.now + 1.week)
 	}
 
+  describe "Associations" do
+
+    it "has one buyer" do
+      assc = described_class.reflect_on_association(:buyer)
+      expect(assc.macro).to eq :has_one
+    end
+
+    it "has one seller" do 
+      assc = described_class.reflect_on_association(:seller)
+      expect(assc.macro).to eq :has_one
+    end
+  end
+
   it "is valid with valid attributes" do
   	expect(subject).to be_valid
   end
